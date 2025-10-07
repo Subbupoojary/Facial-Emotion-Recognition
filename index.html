@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Emotion Detection</title>
+    <style>
+        #videoContainer {
+            display: none; /* Hide the video feed initially */
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Emotion Detection</h1>
+
+    <!-- Button to start emotion detection -->
+    <button id="startButton" onclick="startEmotionDetection()">Start Facial Emotion Detection</button>
+
+    <!-- Container for the video feed, which will be displayed once the button is clicked -->
+    <div id="videoContainer">
+        <img src="{{ url_for('video_feed') }}" width="640" height="480" id="videoElement" />
+    </div>
+
+    <script>
+        // Function to trigger the camera feed on button click
+        function startEmotionDetection() {
+            // Hide the button after it is clicked
+            document.getElementById('startButton').style.display = 'none';
+            
+            // Show the video container
+            document.getElementById('videoContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
